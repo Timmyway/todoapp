@@ -1,0 +1,28 @@
+%abstract-container {	
+	margin: 0 auto;
+	padding: $containerPadding;
+	width: 100%;	
+	@each $bpLabel,$bpValue in $deviceBreakpoints {
+		@if ($bpLabel != 'xs') {
+			@include mq($bpLabel) {
+				max-width: $bpValue;				
+			}
+		}
+	}
+}
+
+.container {	
+	@extend %abstract-container;
+}
+
+.container-fluid {
+	width: 100%;
+	@extend %abstract-container;
+}
+
+// @each $bpLabel,$bpValue in $deviceBreakpoints{
+// 	.container-#{$bpLabel} {
+// 		max-width: $bpValue * 0.8;
+// 		@extend %abstract-container;
+// 	}
+// }

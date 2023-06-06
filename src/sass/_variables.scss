@@ -1,0 +1,141 @@
+// Sass variables:
+$mode: 'prod';
+$theme: 'dark';
+// Colors ---------------------------------------
+$primaryColor: #FFD300!default;
+$secondaryColor: #000000!default;
+$jokerColor: #ca0538!default;
+$variantPrimaryColor: rgba(226, 226, 226, 0.7)!default;
+$variantSecondaryColor: #EAEAEA!default;
+$variantJokerColor: #666666!default;
+$blueEni: rgb(0, 112, 183);
+// Notification colors
+$successColor: #2FBF71!default;
+$infoColor: #FED159!default;
+$warningColor: #ffab3cea!default;
+$dangerColor: #d87187!default;
+$disabledColor: rgba(211, 211, 211, 0.7);
+$discreteColor: #777777;
+// Overlay
+$overlayLightColor: rgba(255, 255, 255, 0.7);
+$overlayDarkColor: rgba(0, 0, 0, 0.7);
+
+// Theme color
+$darkColor: #000000;
+$lightColor: #FFFFFF;
+$themeColor: if($theme == 'dark', $lightColor, $darkColor);
+$reverseThemeColor: if($theme == 'dark', $darkColor, $lightColor);
+$leadTextColor: if($theme == 'dark', darken(white, 60%), lighten(black, 60%));
+
+$linkColor: ('normal': $reverseThemeColor, 
+	'visited': if($theme == 'dark', #eee, #333), 
+	'hover': if($theme == 'dark', lighten($lightColor, 15%), darken($darkColor, 15%)), 
+	'active': lighten(black, 10%)
+);
+
+$neutralColor: #6B7280!default;
+$checkedColor: #EF4444!default;
+
+$marginSuccess: 15px;
+$marginError: 25px;
+// Notification colors
+$primaryColorAccent: lighten($primaryColor, 60%);
+
+// TYPOGRAPHY
+$textSizes: ('xs': 16, 'sm': 24, 'base': 29, 'md': 32, 'lg': 40, 'xl': 48, '2xl': 56, '3xl': 64, '4xl': 72, '5xl': 80, '6xl': 88, '7xl': 96, '8xl': 104, '9xl': 112, '10xl': 120);
+$textMaxSize: 4rem;
+$textIncrementRatio: 0.2;
+$shadowPrimary: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+$shadowSecondary: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px!default;
+$lighterText: rbg(111,111,111)!default;
+$lightText: #FFFFFF!default;
+$darkText: #1e1e1e!default;
+$darkTextAccent: rgb(71,78,93)!default;
+
+$colors: ('primary': $primaryColor,
+	'secondary': $secondaryColor,
+	'joker': $jokerColor,
+	'primary--variant': $variantPrimaryColor,
+	'secondary--variant': $variantSecondaryColor,
+	'joker--variant': $variantJokerColor,
+	// usual colors
+	'white': #FFFFFF,
+	'black': #000000,
+	// Notification colors	
+	'success': $successColor,
+	'info': $infoColor,	
+	'warning': $warningColor,
+	'danger': $dangerColor,
+	// Theme colors
+	'theme': $themeColor,
+	'theme-contrast': $reverseThemeColor,
+	'dark': $darkColor,
+	'light': $lightColor,	
+	'transparent': transparent,
+	'disabled': $disabledColor,
+	'discrete': $discreteColor
+);
+
+$baseBtnSize: 1rem;
+$formHeight: 48px;
+$formIconPadding: 48px;
+
+// Fonts:
+$primaryFont: 'Roboto', 'Lucida Grande', sans-serif;
+$secondaryFont: 'Open Sans', 'Lucida Grande', sans-serif;
+
+// Padding & margin
+$padRatio: 1rem;
+$blockPadding: 15px;
+
+// Block sizing
+$contentMaxSize: 860px;
+
+// Position
+$positions: 'left', 'right', 'center', 'justify';
+
+// CONTAINER / BLOC / LAYOUT
+$screenMinWidth: 360;
+$containerPadding: 1rem 1.5rem;
+
+$deviceBreakpoints: (
+	'xs':  361px,
+	'sm':  640px,
+	'md':   768px,
+	'lg':  1024px,
+	'xl':   1280px,
+	'2xl':   1536px ) !default;
+$deviceBreakpointsReverse: (
+	'2xl':  1536px,
+	'xl':  1280px,
+	'lg':   1024px,
+	'md':  768px,
+	'sm':   640px,
+	'xs':   361px ) !default;
+$breakpointsMax: (
+	'xs':  'max-width: 361px',
+	'sm':  'max-width: 640px',
+	'md':   'max-width: 768px',
+	'lg':  'max-width:  1024px',
+	'xl':   'max-width: 1280px',
+	'2xl':   'max-width: 1536px' ) !default;
+$breakpointsMin: (
+	'xs':  'min-width: 361px',
+	'sm':  'min-width: 576px',
+	'md':   'min-width:  768px',
+	'lg':  'min-width:  992px',
+	'xl':   'min-width: 1200px',
+	'2xl':   'min-width: 1400px' ) !default;
+$breakpointsMinAndMax: (
+	'xs': ('min': 'min-width: 361px', 'max': 'max-width: 639px'),
+	'sm': ('min': 'min-width: 640px', 'max': 'max-width: 767px'),
+	'md': ('min': 'min-width:  768px', 'max': 'max-width: 1023px'),
+	'lg': ('min': 'min-width:  1024px', 'max': 'max-width: 1279px'),
+	'xl': ('min': 'min-width: 1280px', 'max': 'max-width: 1535px'),
+	'2xl': ('min': 'min-width: 1536px') ) !default;
+
+$bodyMinWidth: 360px;
+
+// Images
+$iconSizes: ('xxs': 16, 'xs': 22, 'sm': 32, 'md': 48, 'lg': 64, 'xl': 128, '2xl': 256, 'thumbnail': 170px);
+$imageSizes: ('xs': 24px, 'sm': 48px, 'base': 64px, 'md': 128px, 'lg': 240px, 'xl': 320px, '2xl': 640px, '3xl': 960px, '4xl': 1280px, '5xl': 1920px);

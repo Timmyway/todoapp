@@ -1,0 +1,12 @@
+.notification {
+    position: absolute;
+    padding: 1rem;
+    color: $themeColor;
+    // opacity: .9;
+    border-radius: 4px;
+    width: 100%;
+    &--tl {top: 0; left: 0}
+    &--tr {top: 0; right: 0}
+    &--br {bottom: 0; right: 0}
+    &--bl {bottom: 0; left: 0}
+}

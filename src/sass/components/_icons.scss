@@ -1,0 +1,81 @@
+// temp
+%abstract-ti-icons {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 22px;
+    height: 22px;
+    border: 2px solid;
+    border-radius: 20px;    
+}
+
+.icon--lg {
+    width: 40px;
+    height: 40px;
+}
+
+.ti-caret-down {
+    @extend %abstract-ti-icons;
+    &::after {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-bottom: 2px solid;
+        border-right: 2px solid;
+        transform: rotate(45deg);
+        left: 8px;
+        top: 4px
+    }
+}
+
+.ti-icon-close {
+    @extend %abstract-ti-icons;
+    &::after,
+    &::before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        width: 12px;
+        height: 2px;
+        background: currentColor;
+        transform: rotate(45deg);
+        border-radius: 5px;
+        top: 8px;
+        left: 3px
+    }
+    &::after {
+        transform: rotate(-45deg)
+    }
+}
+
+.ti-icon-calendar {
+    @extend %abstract-ti-icons;
+    border: none;
+    &::after,
+    &::before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        border-radius: 3px;
+        height: 2px;
+        left: 2px
+    }
+    &::before {
+        background: currentColor;
+        width: 2px;
+        box-shadow:
+            4px 0 0,8px 0 0,0 4px 0,
+            4px 4px 0,8px 4px 0;
+        top: 6px
+    }
+    &::after {
+        width: 10px;
+        top: -4px;
+        box-shadow: 0 6px 0 0
+    }
+}

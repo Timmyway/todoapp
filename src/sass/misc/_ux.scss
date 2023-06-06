@@ -1,0 +1,78 @@
+.full-screen-loading {
+    background-color: rgba(0, 0, 0, .9);
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%; height: 100vh;
+    z-index: 999999999999999;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; align-items: center;
+    gap: 25px;
+    .loading-text {
+        font-size: 2rem;
+        color: white;
+    }
+    .spinner {
+        // background-color: rgba(255, 255, 255, .9);
+        background-color: rgba($secondaryColor, .8);
+        width: 120px; height: 120px;
+        position: relative;
+        // top: 50%; left: 50%;
+        // transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center; align-items: center;
+        border-radius: 50%;
+        box-shadow: $shadowPrimary;
+        &::before {
+            content: '';
+            width: 60px; height: 6px;
+            display: block;
+            background-color: #eeeeee;
+            border-radius: 20px;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            animation: spin 1s infinite;
+            transform-origin: center left;
+        }
+        &::after {
+            content: '';
+            width: 15px; height: 15px;
+            display: block;
+            background-color: $jokerColor;
+            border-radius: 20px;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            transform-origin: center center;
+            // animation: spin 3s infinite;
+        }
+    }    
+}
+
+.go-top {
+	width: 50px; height: 50px;
+	@extend %abstract-flex-center !optional;
+	background: $secondaryColor;
+	padding: 0.5rem;
+	border-radius: 50%;
+	position: fixed;
+	bottom: 1%;
+	right: 1%;
+	i {color: $reverseThemeColor;}
+    a {
+        color: $reverseThemeColor;
+        &:visited { color: $reverseThemeColor }
+    }
+}
+
+// Genereate 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100%.
+@keyframes spin {
+    @for $i from 0 through 100 {
+        @if $i % 2 == 0 {
+            #{$i * 1%} {            
+                transform: rotateZ((math.div(($i * 360), 100)) * 1deg);
+            }
+        }            
+    }
+}
