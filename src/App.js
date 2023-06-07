@@ -3,7 +3,8 @@
 // import LikePhotoApp from "./projects/03-like-my-photo/LikePhotoApp";
 // import TestimonialsApp from "./projects/04-testimonials-app/TestimonialsApp";
 // import AlertApp from "./projects/05-alerts/AlertApp";
-import LightAndDarkMode from "./projects/07-light-and-dark-mode/LightAndDarkMode";
+// import LightAndDarkMode from "./projects/07-light-and-dark-mode/LightAndDarkMode";
+import HiddenSearchBar from "./projects/10-hidden-search-bar/HiddenSearchBar";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       {/* <RandomizeColor></RandomizeColor> */}
       {/* <LikePhotoApp></LikePhotoApp> */}
       {/* <TestimonialsApp /> */}
-      <LightAndDarkMode />
+      {/* <LightAndDarkMode /> */}
+      <HiddenSearchBar />
     </div>
   );
 }
